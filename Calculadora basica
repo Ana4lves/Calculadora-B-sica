@@ -1,0 +1,54 @@
+def adicao(numero1, numero2):
+    return print (f'O resultado da adição é: {numero1 + numero2}')
+
+def subtracao(numero1, numero2):
+    return print (f'O resultado da subitração é: {numero1 - numero2}')
+
+def multiplicacao(numero1, numero2):
+    return print (f'O resultado da multiplicação é: {numero1 * numero2}')
+
+def divisao(numero1, numero2):
+    return print (f'O resultado da divisão é: {numero1 / numero2}')
+
+def potencia(numero1, numero2):
+    return print (f'O resultado da potencia é: {numero1 ** numero2}')
+
+def modulo(numero1, numero2):
+    return print (f'O resultado do modulo é: {numero1 % numero2}')
+
+def sinal():
+    while True: 
+        operation = input ('Por favor selecionar a operação matematica que você gostaria de utilizar: \n+ para adição \n- para subtração \n* para multiplicação \n/ para divisão \n** para potencia \n% para modulo')
+        if operation in {'+', '-', '', '/', '*', '%'}:
+            return operation
+
+def calculadnv():
+    while True:
+        resp = input('Gostaria de calcular novamente? [S/N]')  
+        if resp == 'S':
+            main()
+        elif resp == 'N':
+            break
+
+
+def main():
+    print('Bem vindo a calculadora')
+    operation = sinal()
+    numero1 = int(input('Digite seu primeiro numero: '))
+    numero2 = int(input('Digite seu segundo numero'))
+    if operation == "+":
+        adicao(numero1, numero2)
+    elif operation == "-":
+        subtracao(numero1, numero2)
+    elif operation == "*":
+        multiplicacao(numero1, numero2)
+    elif operation == "/":
+        divisao(numero1, numero2)
+    elif operation == "":
+        potencia(numero1, numero2)
+    else:
+        modulo(numero1, numero2)
+    calculadnv()
+
+if __name__ == "_main_":
+    main()
